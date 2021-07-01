@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "49a3c431-0ae8-4944-b5dc-24d02faadbec",
+		"name": "Twitter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SIGN IN",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"user\": { \"email\": \"test@example.com\", \"password\": \"12345678\" } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/users/sign_in?email=test@example.com&password=12345678",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"sign_in"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test@example.com"
+						},
+						{
+							"key": "password",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIGN OUT",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjI0OTI2MzExLCJleHAiOjE2MjQ5Mjk5MTEsImp0aSI6Ijc4Njk2ZjEwLTVjOWUtNDg2MS05MjMxLWExNjAwMzcyNWUxNiJ9.ZGW3b96KBI170B3ou_Qxp4GYqxohCRfwynQ2Fi7MN60",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/users/sign_out",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"sign_out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL USERS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/member-data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"member-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND EACH USER DETAILS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjI0OTQ0NDUwLCJleHAiOjE2MjQ5NDgwNTAsImp0aSI6IjllYzQyMTdmLTY5ODMtNGE0MC1iMmFmLTc0N2E1ZjBjZTE4NyJ9.fdxtyA45y6yid9hXQCdnZvLBGF4nDtx8ANKbNpTP95U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjI0OTQ0NDUwLCJleHAiOjE2MjQ5NDgwNTAsImp0aSI6IjllYzQyMTdmLTY5ODMtNGE0MC1iMmFmLTc0N2E1ZjBjZTE4NyJ9.fdxtyA45y6yid9hXQCdnZvLBGF4nDtx8ANKbNpTP95U",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/member-data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"member-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ALL TWEET LIST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/tweets",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tweets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE TWEET",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjI0OTU4NzA5LCJleHAiOjE2MjQ5NjIzMDksImp0aSI6ImRkMWFlZGEwLWE1ZGEtNDY1ZS1hYzljLTIwNjRlMGU5NjQxZCJ9.ip4JCzCDSQ_3WZyC0rgPMseu8BOzwDAOFiRob71ldt0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/tweets?thought=everything works fine",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tweets"
+					],
+					"query": [
+						{
+							"key": "thought",
+							"value": "everything works fine"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIGN UP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"user\": { \"email\": \"shanjoyshajan@rediffmail.com\", \"password\": \"12345678\" } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/users?email=shanjoyshajan@rediffmail.com&password=12345678",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "shanjoyshajan@rediffmail.com"
+						},
+						{
+							"key": "password",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NEW FOLLOW",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjI0OTY2OTgyLCJleHAiOjE2MjQ5NzA1ODIsImp0aSI6IjI1OGU1OWZhLTI0NjgtNDUwNy1hNGZmLWFjYTMyYjE1YWYzNiJ9.JBGGDWZX3DZUfkaUyoOQuyOywvvi8kQNdTp773ztzlw",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/follow?following=11",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"follow"
+					],
+					"query": [
+						{
+							"key": "following",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET FOLLOWERS TWEETS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjI0OTczODU0LCJleHAiOjE2MjQ5Nzc0NTQsImp0aSI6ImU4OTc3Y2I1LWJkOTktNGUzNi1hMWU3LWJkMDU1ZGFlNjQwNyJ9.COalsPhhMs5uvfFsTTqrKPhg-0XLolJE7a7jjoNZmyc",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/follow/follow_tweets",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"follow",
+						"follow_tweets"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
