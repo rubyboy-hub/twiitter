@@ -13,7 +13,7 @@ class FollowController < ApplicationController
           followers = current_user.follows.new(follow_details)
 
           if followers.save
-            render json: "Following #{follow_details}", status: :created
+            render json: "Following done on selected user", status: :created
           else
             render json: {
               errors: followers.errors.full_messages
